@@ -49,6 +49,7 @@ public class ConcreteUser implements User {
 	}
 
 	public void addConfirmedConnection(Connect conn) {
+		System.out.print("Connection Received!");
 		confirmedConnections.add(conn);
 	}
 	
