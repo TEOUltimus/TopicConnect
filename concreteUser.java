@@ -50,4 +50,8 @@ public class ConcreteUser implements User {
 	public Collection<Topic> getPreferences() {
 		return null;
 	}
+
+	public void receiveMessage(Message m) {
+		// Do Nothing
+	}
 }
