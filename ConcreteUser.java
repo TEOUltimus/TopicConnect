@@ -7,8 +7,8 @@ public class ConcreteUser implements User {
 	String location;
 	boolean localOnly;
 	boolean privlege;
-	HashSet<Connection> pendingConnections;
-	HashSet<Connection> confirmedConnections;
+	HashSet<Connect> pendingConnections;
+	HashSet<Connect> confirmedConnections;
 	HashSet<Topic> preferredTopics;
 	
 	
@@ -19,8 +19,8 @@ public class ConcreteUser implements User {
 		String location = "";
 		localOnly = true;
 		privlege = false;
-		pendingConnections = new HashSet<Connection>();
-		confirmedConnections = new HashSet<Connection>();
+		pendingConnections = new HashSet<Connect>();
+		confirmedConnections = new HashSet<Connect>();
 		preferredTopics = new HashSet<Topic>();
 		
     }
@@ -34,7 +34,7 @@ public class ConcreteUser implements User {
 		 return this.location;
 	}	
 
-	public boolean grantApproval(Connection pendingConnection)
+	public boolean grantApproval(Connect pendingConnection)
 	{
 		if (privlege = false) {
 			return false;
@@ -51,16 +51,16 @@ public class ConcreteUser implements User {
 		recipient.receiveMessage(sentMessage);
 	}
 
-	public void addPendingConnection(Connection conn) 
+	public void addPendingConnection(Connect conn) 
 	{
 		pendingConnections.add(conn);
 	}
-		public void removePendingConnection(Connection conn) 
+		public void removePendingConnection(Connect conn) 
 	{
 		pendingConnections.remove(conn);
 	}
 
-	public void addConfirmedConnection(Connection conn) 
+	public void addConfirmedConnection(Connect conn) 
 	{
 		confirmedConnections.add(conn);
 	}

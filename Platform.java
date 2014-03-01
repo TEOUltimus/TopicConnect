@@ -13,7 +13,7 @@ import java.sql.ResultSet;
  */
 public class Platform {
 	private static Platform singleton = null;
-	public static Connection SQLconn = null;
+	public static Connect SQLconn = null;
 	Collection<User> admins;
 	Collection<User> users;
 	Collection<Topic> topics;
@@ -37,8 +37,8 @@ public class Platform {
 	}
 	
 	public void createConnection(Message m, Topic t) {
-		Connection c =
-				new ConcreteConnection(admins.iterator().next(), m.getSender(), m.getRecipient());
+		Connect c =
+				new ConcreteConnect(admins.iterator().next(), m.getSender(), m.getRecipient());
 		c.alertUser(t);
 	}
 	
