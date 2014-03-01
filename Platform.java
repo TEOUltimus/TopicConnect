@@ -60,11 +60,11 @@ public class Platform {
 		Platform testPlatform = new Platform();
 		
 		//Make test lists of users, topics, and projects
-		User David = new User("David");
-		User Eric = new User("Eric");
-		User Brandon = new User("Brandon");
-		User Sudatta = new User("Sudatta");
-		User Dan = new User("Dan");
+		ConcreteUser David = new ConcreteUser("David");
+		ConcreteUser Eric = new ConcreteUser("Eric");
+		ConcreteUser Brandon = new ConcreteUser("Brandon");
+		ConcreteUser Sudatta = new ConcreteUser("Sudatta");
+		ConcreteUser Dan = new ConcreteUser("Dan");
 		Dan.setPrivilege(true);
 		testPlatform.users.add(David);
 		testPlatform.users.add(Eric);
@@ -72,18 +72,18 @@ public class Platform {
 		testPlatform.users.add(Sudatta);
 		testPlatform.users.add(Dan);
 		
-		Topic Biologics = new Topic("Biologics");
-		Topic Generics = new Topic("Generics");
-		Topic Hackathons = new Topic("Hackathons");
+		ConcreteTopic Biologics = new ConcreteTopic("Biologics", Dan);
+		ConcreteTopic Generics = new ConcreteTopic("Generics", Dan);
+		ConcreteTopic Hackathons = new ConcreteTopic("Hackathons", Dan);
 		testPlatform.topics.add(Biologics);
 		testPlatform.topics.add(Generics);
 		testPlatform.topics.add(Hackathons);
 		
-		Project marchHackathon = new project();
-		Project worldDomination = new project();
+		ConcreteProject marchHackathon = new ConcreteProject();
+		ConcreteProject worldDomination = new ConcreteProject();
 		marchHackathon.addTopic(Hackathons);
 		worldDomination.addTopic(Generics);
-		worldomination.addTopic(Biologics);
+		worldDomination.addTopic(Biologics);
 		marchHackathon.addUser(David);
 		marchHackathon.addUser(Eric);
 		worldDomination.addUser(Sudatta);
