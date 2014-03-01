@@ -18,19 +18,12 @@ public class ConcreteUser implements User {
 		
     }
 	
-<<<<<<< HEAD
 	public String getLocation()
 	{
 		 return this.location;
 	}
 	
-	public String 
-	
-	
-	public boolean grantApproval(concreteConnection pendingConnection)
-=======
 	public boolean grantApproval(Connection pendingConnection)
->>>>>>> 33ed168321c0eb160aa8dec86ba35891aa5014c4
 	{
 		if (this.privelege = false) {
 			return false;
@@ -40,54 +33,21 @@ public class ConcreteUser implements User {
 			return true;
 		}
 	}
-	
-<<<<<<< HEAD
-	public void sendMessage(concreteMessage newMessage, concreteUser otherUser)
-	{
-		return null;
-	
-	}
-	
-	public void addConnection(concerteConnection newConnection)
-	{
-	
-		return null;
-	}
-	
-	public void removeConnection(concreteConnection connection)
-	{
-		return null;
-	}
-	
-	
-	
-	
-=======
-	public void addConnection(Connection newConnection)	{
-	}
-	
-	public void removeConnection(Connection connection)	{
-	}
 
 	public void sendMessage(User recipient, String text) {
 	}
 
-	@Override
-	public void addPendingConnection() {
-		// TODO Auto-generated method stub
+	public void addPendingConnection(Connection conn) {
 		
 	}
 
-	@Override
-	public void removePendingConnection() {
-		// TODO Auto-generated method stub
-		
+	public void removePendingConnection(Connection conn) {
 	}
 
-	@Override
-	public void addConfirmedConnection() {
-		// TODO Auto-generated method stub
-		
+	public void addConfirmedConnection(Connection conn) {
 	}
->>>>>>> 33ed168321c0eb160aa8dec86ba35891aa5014c4
+
+	public Collection<Topic> getPreferences() {
+		return null;
+	}
 }
