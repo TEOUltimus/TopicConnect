@@ -26,8 +26,15 @@ public class ConcreteConnection implements Connection{
 		
 	}
 
-	public User getOtherUser() {
-		return null;
+	public User getOtherUser(User u) {
+		if (!approved) return null;
+		if (u == user1) {
+			return user2;
+		} else if (u == user2) {
+			return user1;
+		} else {
+			return null;
+		}
 	}
 
 }

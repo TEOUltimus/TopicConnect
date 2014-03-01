@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class concreteUser implements User {
+public class ConcreteUser implements User {
     
 	String name;
 	String id;
@@ -9,15 +9,16 @@ public class concreteUser implements User {
 	boolean privelege;
 	ArrayList<String> pendingConnections;
 	ArrayList<String> confirmedConnections;
-	ArrayList<concreteTopic> preferredTopics;
+	ArrayList<Topic> preferredTopics;
 	
 	
-    public concreteUser(String name)
+    public ConcreteUser(String name)
     {
         this.name = name;
 		
     }
 	
+<<<<<<< HEAD
 	public String getLocation()
 	{
 		 return this.location;
@@ -27,16 +28,20 @@ public class concreteUser implements User {
 	
 	
 	public boolean grantApproval(concreteConnection pendingConnection)
+=======
+	public boolean grantApproval(Connection pendingConnection)
+>>>>>>> 33ed168321c0eb160aa8dec86ba35891aa5014c4
 	{
-		if this.privelege = false
-		{
+		if (this.privelege = false) {
 			return false;
 		}
-		else
+		else {
 			//Code creation of connection in each user in here
 			return true;
+		}
 	}
 	
+<<<<<<< HEAD
 	public void sendMessage(concreteMessage newMessage, concreteUser otherUser)
 	{
 		return null;
@@ -57,4 +62,32 @@ public class concreteUser implements User {
 	
 	
 	
+=======
+	public void addConnection(Connection newConnection)	{
+	}
+	
+	public void removeConnection(Connection connection)	{
+	}
+
+	public void sendMessage(User recipient, String text) {
+	}
+
+	@Override
+	public void addPendingConnection() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removePendingConnection() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addConfirmedConnection() {
+		// TODO Auto-generated method stub
+		
+	}
+>>>>>>> 33ed168321c0eb160aa8dec86ba35891aa5014c4
 }
