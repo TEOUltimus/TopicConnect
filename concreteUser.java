@@ -7,9 +7,9 @@ public class ConcreteUser implements User {
 	String location;
 	boolean localOnly;
 	boolean privelege;
-	ArrayList<String> pendingConnections;
-	ArrayList<String> confirmedConnections;
-	ArrayList<Topic> preferredTopics;
+	HashSet<Connection> pendingConnections;
+	HashSet<Connection> confirmedConnections;
+	HashSet<Topic> preferredTopics;
 	
 	
     public ConcreteUser(String name)
@@ -50,23 +50,30 @@ public class ConcreteUser implements User {
 
 	public void sendMessage(User recipient, String text) 
 	{
-		Message sentMessage = new Message(text);
-		
+		Message sentMessage = new Message(text);	
+		return null;
+	}
+
+	public void addPendingConnection(Connection conn) 
+	{
+		pendingConnections.add(conn);
+		return null;
+	}
+
+	public void removePendingConnection(Connection conn) 
+	{
+		pendingConnections.remove(conn);
+		return null;
+	}
+
+	public void addConfirmedConnection(Connection conn) 
+	{
+		confirmedConnections.add(conn);
+		return null;
+	}
 	
-	}
-
-	public void addPendingConnection() 
+	Collection<Topic> getPreferences()
 	{
-		
-	}
-
-	public void removePendingConnection() 
-	{
-		
-	}
-
-	public void addConfirmedConnection() 
-	{
-		
+		return this.preferredTopics;
 	}
 }
