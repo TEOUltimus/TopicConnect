@@ -9,6 +9,7 @@ public interface User {
 	boolean isPrivleged();
 	void sendMessage(User recipient, String text);
 	void receiveMessage(Message m);
+	void expressInterest(Connect conn);
 	void addPendingConnection(Connect conn);
 	boolean removePendingConnection(Connect conn);
 	void addConfirmedConnection(Connect conn);

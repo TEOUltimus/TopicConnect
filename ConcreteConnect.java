@@ -28,12 +28,17 @@ public class ConcreteConnect implements Connect {
 			user1.addPendingConnection(this);
 			user2.addPendingConnection(this);
 		}
+		if (requestPermission()) {
+			connectUsers();
+		} else {
+			System.out.println("User does not have permission to approve this.");
+		}
 	}
 
 	/**
 	 * Requests permission from the privleged user in charge
 	 */
-	public boolean requestPermission() {
+	private boolean requestPermission() {
 		if (requested1 && requested2) {
 			return privlegedUser.grantApproval(this);
 		}
@@ -43,7 +48,7 @@ public class ConcreteConnect implements Connect {
 	/**
 	 * Changes connection from potential to definite
 	 */
-	public void connectUsers() {
+	private void connectUsers() {
 		user1.removePendingConnection(this);
 		user1.addConfirmedConnection(this);
 		user2.removePendingConnection(this);
@@ -61,6 +66,14 @@ public class ConcreteConnect implements Connect {
 			return user1;
 		} else {
 			return null;
+		}
+	}
+
+	public void markInterest(User u) {
+		if (u == user1) {
+			requested1 = true;
+		} else if (u == user2) {
+			requested2 = true;
 		}
 	}
 }

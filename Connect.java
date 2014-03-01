@@ -4,7 +4,6 @@
  */
 public interface Connect {
 	void alertUser(Topic t);
-	boolean requestPermission();
-	void connectUsers();
 	User getOtherUser(User u);
+	void markInterest(User u);
 }

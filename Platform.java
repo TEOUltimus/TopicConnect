@@ -37,6 +37,7 @@ public class Platform {
 	}
 	
 	public void createConnection(User admin, Message m, Topic t) {
+		System.out.println("Creating Connenction " + t);
 		Connect c =
 				new ConcreteConnect(admin, m.getSender(), m.getRecipient());
 		c.alertUser(t);
@@ -51,7 +52,7 @@ public class Platform {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println("Hello Users!");
+		getPlatform().establishDBConnection();
 		
 		Platform testPlatform = getPlatform();
 		
@@ -93,9 +94,6 @@ public class Platform {
 		testPlatform.projects.add(worldDomination);
 		
 		David.sendMessage(Brandon, "Been working out the kinks with Generics from worldDomination in my spare time, had some ideas...");
-
-		getPlatform().establishDBConnection();
-		//getPlatform().testSQL();
 	}
 	
 	public void establishDBConnection(){

@@ -43,7 +43,9 @@ public class ConcreteUser implements User {
 	}
 
 	public void addPendingConnection(Connect conn) {
+		System.out.println("Pending Connection");
 		pendingConnections.add(conn);
+		expressInterest(conn);
 	}
 	
 	public boolean removePendingConnection(Connect conn) {
@@ -83,6 +85,10 @@ public class ConcreteUser implements User {
 	public void addPreferences(Collection<Topic> preferredTopicsN)
 	{
 		this.preferredTopics.addAll(preferredTopicsN);
+	}
+
+	public void expressInterest(Connect conn) {
+		conn.markInterest(this);
 	}
 	
 }
