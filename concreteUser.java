@@ -36,7 +36,6 @@ public class ConcreteUser implements User {
 	public String 
 	
 	
-	public boolean grantApproval(concreteConnection pendingConnection)
 	public boolean grantApproval(Connection pendingConnection)
 	{
 		if (this.privelege = false) {
@@ -48,44 +47,26 @@ public class ConcreteUser implements User {
 		}
 	}
 	
-	public void sendMessage(concreteMessage newMessage, concreteUser otherUser)
+
+	public void sendMessage(User recipient, String text) 
 	{
-		return null;
+		Message sentMessage = new Message(text);
+		
 	
-	}
-	
-	public void addConnection(concerteConnection newConnection)
-	{
-	
-		return null;
-	}
-	
-	public void removeConnection(concreteConnection connection)
-	{
-		return null;
-	}
-	
-	public void addConnection(Connection newConnection)	{
-	}
-	
-	public void removeConnection(Connection connection)	{
 	}
 
-	public void sendMessage(User recipient, String text) {
-	}
-
-	@Override
-	public void addPendingConnection() {
+	public void addPendingConnection() 
+	{
 		
 	}
 
-	@Override
-	public void removePendingConnection() {
+	public void removePendingConnection() 
+	{
 		
 	}
 
-	@Override
-	public void addConfirmedConnection() {
+	public void addConfirmedConnection() 
+	{
 		
 	}
 }
