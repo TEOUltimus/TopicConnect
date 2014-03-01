@@ -2,6 +2,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
 
@@ -13,7 +14,7 @@ import java.sql.ResultSet;
  */
 public class Platform {
 	private static Platform singleton = null;
-	public static Connect SQLconn = null;
+	public static Connection SQLconn = null;
 	Collection<User> admins;
 	Collection<User> users;
 	Collection<Topic> topics;
