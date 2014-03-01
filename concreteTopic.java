@@ -4,7 +4,8 @@ public concreteTopic implements Topic
 {
 	String topicName;
 	
-	public concreteTopic()
+	public concreteTopic(String name)
 	{
+		this.topicName = name;
 	}
 }

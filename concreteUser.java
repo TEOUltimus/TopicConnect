@@ -5,6 +5,7 @@ public class concreteUser implements User {
 	String name;
 	String id;
 	String location;
+	boolean localOnly;
 	boolean privelege;
 	ArrayList<String> pendingConnections;
 	ArrayList<String> confirmedConnections;
@@ -17,6 +18,14 @@ public class concreteUser implements User {
 		
     }
 	
+	public String getLocation()
+	{
+		 return this.location;
+	}
+	
+	public String 
+	
+	
 	public boolean grantApproval(concreteConnection pendingConnection)
 	{
 		if this.privelege = false
@@ -28,21 +37,24 @@ public class concreteUser implements User {
 			return true;
 	}
 	
-	public sendMessage(concreteMessage newMessage, concreteUser otherUser)
+	public void sendMessage(concreteMessage newMessage, concreteUser otherUser)
 	{
-	
+		return null;
 	
 	}
 	
 	public void addConnection(concerteConnection newConnection)
 	{
+	
 		return null;
 	}
 	
 	public void removeConnection(concreteConnection connection)
 	{
-	return null;
+		return null;
 	}
+	
+	
 	
 	
 }
