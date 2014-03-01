@@ -11,7 +11,7 @@ class ConcreteTopic implements Topic
 
 	public void alertPlatform(Message m) 
 	{
-		
+		Platform.getPlatform().createConnection(this);
 	}
 	
 	public boolean textMatch(String text)
