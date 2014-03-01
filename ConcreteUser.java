@@ -71,4 +71,19 @@ public class ConcreteUser implements User {
 	public void setPrivilege(boolean bool) {
 		this.privileged = bool;
 	}
+	
+	public void addPreference(Topic preferredTopic)
+	{
+		this.preferredTopics.add(preferredTopic);
+	}
+	
+	public void addPreferences(Collection<Topic> preferredTopicsN)
+	{
+		for(Topic t : preferredTopicsN)
+		{
+			this.preferredTopics.add(t);
+		}
+	}
+	
 }
+
