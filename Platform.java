@@ -7,9 +7,13 @@ import java.util.HashSet;
 public class Platform {
 	private static Platform singleton = null;
 	Collection<User> users;
+	Collection<Topic> topics;
+	Collection<Project> projects;
 	
 	private Platform(){
 		users = new HashSet<>();
+		topics = new HashSet<>();
+		projects = new HashSet<>();
 	}
 	
 	public static Platform getPlatform() {
@@ -25,6 +29,10 @@ public class Platform {
 	
 	public void createConnection(Topic t) {
 		
+	}
+	
+	public Collection<Topic> getTopics() {
+		return topics;
 	}
 	
 	/**
