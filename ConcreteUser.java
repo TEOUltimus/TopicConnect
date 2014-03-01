@@ -31,10 +31,12 @@ public class ConcreteUser implements User {
 	}	
 
 	public boolean grantApproval(Connect pendingConnection)	{
+		System.out.println(privileged);
 		return privileged;
 	}
 
 	public void sendMessage(User recipient, String text) {
+		System.out.println("Sent '" + text + "' to " + recipient);
 		Message sentMessage = new ConcreteMessage(this, recipient, text);
 		sentMessage.process();
 		recipient.receiveMessage(sentMessage);
@@ -49,7 +51,7 @@ public class ConcreteUser implements User {
 	}
 
 	public void addConfirmedConnection(Connect conn) {
-		System.out.print("Connection Received!");
+		System.out.println("Connection Received!");
 		confirmedConnections.add(conn);
 	}
 	
@@ -80,10 +82,7 @@ public class ConcreteUser implements User {
 	
 	public void addPreferences(Collection<Topic> preferredTopicsN)
 	{
-		for(Topic t : preferredTopicsN)
-		{
-			this.preferredTopics.add(t);
-		}
+		this.preferredTopics.addAll(preferredTopicsN);
 	}
 	
 }

@@ -5,9 +5,6 @@ import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
-import java.io.*;
-import java.net.*;
-
 
 // Not importing com.mysql.jdbc, documentation says this leads to sadness
 
@@ -55,10 +52,8 @@ public class Platform {
 	 */
 	public static void main(String[] args) {
 		System.out.println("Hello Users!");
-		getPlatform().establishDBConnection();
-		getPlatform().testSQL();
 		
-		Platform testPlatform = new Platform();
+		Platform testPlatform = getPlatform();
 		
 		//Make test lists of users, topics, and projects
 		ConcreteUser David = new ConcreteUser("David");
@@ -97,8 +92,10 @@ public class Platform {
 		testPlatform.projects.add(marchHackathon);
 		testPlatform.projects.add(worldDomination);
 		
-		David.sendMessage(Brandon, "Been working out the kinks with worldDomination in my spare time, had some ideas...");
-		
+		David.sendMessage(Brandon, "Been working out the kinks with Generics from worldDomination in my spare time, had some ideas...");
+
+		getPlatform().establishDBConnection();
+		getPlatform().testSQL();
 	}
 	
 	public void establishDBConnection(){

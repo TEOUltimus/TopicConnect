@@ -26,4 +26,9 @@ class ConcreteTopic implements Topic
 	public boolean textMatch(String text) {
 		return text.contains(this.topicName);
 	}
+	
+	@Override
+	public String toString() {
+		return topicName;
+	}
 }
