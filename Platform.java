@@ -57,44 +57,8 @@ public class Platform {
 		System.out.println("Hello Users!");
 		getPlatform().establishDBConnection();
 		
+		
 		Platform testPlatform = new Platform();
-		
-		//Make test lists of users, topics, and projects
-		User David = new User("David");
-		User Eric = new User("Eric");
-		User Brandon = new User("Brandon");
-		User Sudatta = new User("Sudatta");
-		User Dan = new User("Dan");
-		Dan.setPrivilege(true);
-		testPlatform.users.add(David);
-		testPlatform.users.add(Eric);
-		testPlatform.users.add(Brandon);
-		testPlatform.users.add(Sudatta);
-		testPlatform.users.add(Dan);
-		
-		Topic Biologics = new Topic("Biologics");
-		Topic Generics = new Topic("Generics");
-		Topic Hackathons = new Topic("Hackathons");
-		testPlatform.topics.add(Biologics);
-		testPlatform.topics.add(Generics);
-		testPlatform.topics.add(Hackathons);
-		
-		Project marchHackathon = new project();
-		Project worldDomination = new project();
-		marchHackathon.addTopic(Hackathons);
-		worldDomination.addTopic(Generics);
-		worldomination.addTopic(Biologics);
-		marchHackathon.addUser(David);
-		marchHackathon.addUser(Eric);
-		worldDomination.addUser(Sudatta);
-		testPlatform.projects.add(marchHackathon);
-		testPlatform.projects.add(worldDomination);
-		
-		David.sendMessage(Brandon, "Been working out the kinks with worldDomination in my spare time, had some ideas...");
-		
-		
-		
-		
 	}
 	
 	public void establishDBConnection(){
