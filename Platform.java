@@ -39,9 +39,9 @@ public class Platform {
 		return users;
 	}
 	
-	public void createConnection(Message m, Topic t) {
+	public void createConnection(User admin, Message m, Topic t) {
 		Connect c =
-				new ConcreteConnect(admins.iterator().next(), m.getSender(), m.getRecipient());
+				new ConcreteConnect(admin, m.getSender(), m.getRecipient());
 		c.alertUser(t);
 	}
 	
