@@ -61,12 +61,13 @@ public class Platform {
 	
 	public void establishDBConnection(){
 	    // Bad practice, but we're bad people
+	    Class cls = null; // persistance 
 	    try{
             File file = new File("mysql-connector-java-5.1.29-bin.jar");
             URL url = file.toURL();
             URL[] urls = new URL[]{url};
             ClassLoader cl = new URLClassLoader(urls);
-            Class cls = cl.loadClass("com.mysql.jdbc.Driver");
+            cls = cl.loadClass("com.mysql.jdbc.Driver");
         }
         catch(Exception ex){
             System.out.println("File not found -- " + ex);
