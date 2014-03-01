@@ -62,7 +62,7 @@ public class Platform {
 	public void establishDBConnection(){
 	    // Bad practice, but we're bad people
 	    try{
-            File file = new File("./mysql-connector-java-5.1.29-bin");
+            File file = new File("mysql-connector-java-5.1.29-bin.jar");
             URL url = file.toURL();
             URL[] urls = new URL[]{url};
             ClassLoader cl = new URLClassLoader(urls);
