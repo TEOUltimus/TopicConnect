@@ -70,7 +70,7 @@ public class Platform {
 		}
 	}
 	
-	public void runSQL(String SQL){
+	public ResultSet runSQL(String SQL){
 	    Statement stmt = null;
 	    ResultSet rs = null;
 	    
@@ -93,9 +93,11 @@ public class Platform {
                 rs = null;
             }
             if (stmt != null){
-                try{ stmt.close(); } catch (SQLException sqlEx) {}
+                try{ stmt.close(); } catch(SQLException sqlEx){}
                 stmt = null;
             }
         }
+        
+        return rs;
 	}
 }
