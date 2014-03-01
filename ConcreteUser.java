@@ -43,8 +43,8 @@ public class ConcreteUser implements User {
 		pendingConnections.add(conn);
 	}
 	
-	public void removePendingConnection(Connect conn) {
-		pendingConnections.remove(conn);
+	public boolean removePendingConnection(Connect conn) {
+		return pendingConnections.remove(conn);
 	}
 
 	public void addConfirmedConnection(Connect conn) {
@@ -67,8 +67,7 @@ public class ConcreteUser implements User {
 		return privleged;
 	}
 	
-	public void setPrivilege(boolean bool)
-	{
+	public void setPrivilege(boolean bool) {
 		this.privleged = bool;
 	}
 }
