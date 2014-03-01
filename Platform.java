@@ -23,6 +23,10 @@ public class Platform {
 		return users;
 	}
 	
+	public void CreateConnection(Topic t) {
+		
+	}
+	
 	/**
 	 * Allows users to find other users talking about similar topics
 	 * @param args
