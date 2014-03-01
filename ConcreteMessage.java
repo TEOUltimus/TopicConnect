@@ -10,6 +10,9 @@ public class ConcreteMessage implements Message{
 		text = t;
 	}
 	
+	/**
+	 * Processes the text to look for matching topics
+	 */
 	public void process() {
 		for (Topic t : Platform.getPlatform().getTopics()) {
 			if (t.textMatch(text)) {
