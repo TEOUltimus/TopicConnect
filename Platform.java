@@ -23,7 +23,7 @@ public class Platform {
 		return users;
 	}
 	
-	public void CreateConnection(Topic t) {
+	public void createConnection(Topic t) {
 		
 	}
 	
