@@ -3,7 +3,7 @@
  * Instance of the Connection interface
  */
 public class ConcreteConnection implements Connection{
-	private User privelegedUser;
+	private User privlegedUser;
 	private User user1, user2;
 	private boolean approved = false;
 	private boolean requested1 = false, requested2 = false;
