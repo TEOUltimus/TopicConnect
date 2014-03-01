@@ -95,7 +95,7 @@ public class Platform {
 		David.sendMessage(Brandon, "Been working out the kinks with Generics from worldDomination in my spare time, had some ideas...");
 
 		getPlatform().establishDBConnection();
-		getPlatform().testSQL();
+		//getPlatform().testSQL();
 	}
 	
 	public void establishDBConnection(){
@@ -146,9 +146,7 @@ public class Platform {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
-	    }
-        finally{
-            // cleanup
+            
             if (rs != null){
                 try { rs.close(); } catch (SQLException sqlEx) {}
                 rs = null;
@@ -157,7 +155,7 @@ public class Platform {
                 try{ stmt.close(); } catch(SQLException sqlEx){}
                 stmt = null;
             }
-        }
+	    }
         
         return rs;
 	}
@@ -168,7 +166,9 @@ public class Platform {
 	    
 	    System.out.println(rs.getClass());
 	    try{
-    	    System.out.println(rs.getString("first_name"));
+	        if (rs.next()) { //must do to get anything from a ResultSet
+                System.out.println(rs.getString("first_name")); //Getting the result from the column of that name
+	        }
     	} catch(SQLException ex){
     	    System.out.println(ex);
     	}
