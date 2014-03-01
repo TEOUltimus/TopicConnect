@@ -50,25 +50,21 @@ public class ConcreteUser implements User {
 	{
 		Message sentMessage = new Message(text);
 		recipient.receiveMessage(sentMessage);
-		return null;
 	}
 
 	public void addPendingConnection(Connection conn) 
 	{
 		pendingConnections.add(conn);
-		return null;
 	}
 
 	public void removePendingConnection(Connection conn) 
 	{
 		pendingConnections.remove(conn);
-		return null;
 	}
 
 	public void addConfirmedConnection(Connection conn) 
 	{
 		confirmedConnections.add(conn);
-		return null;
 	}
 	
 	Collection<Topic> getPreferences()
@@ -78,6 +74,6 @@ public class ConcreteUser implements User {
 	
 	public void receiveMessage(Message m)
 	{
-		return null;
+		//Do Nothing
 	}
 }
