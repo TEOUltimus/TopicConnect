@@ -6,6 +6,7 @@ import java.util.Collection;
  */
 public interface User {
 	boolean grantApproval(Connect conn);
+	boolean isPrivleged();
 	void sendMessage(User recipient, String text);
 	void receiveMessage(Message m);
 	void addPendingConnection(Connect conn);

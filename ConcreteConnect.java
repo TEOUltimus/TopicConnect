@@ -8,12 +8,21 @@ public class ConcreteConnect implements Connect {
 	private boolean approved = false;
 	private boolean requested1 = false, requested2 = false;
 	
+	/**
+	 * Creates an instance of Connection
+	 * @param admin
+	 * @param u1 first user
+	 * @param u2 second user
+	 */
 	public ConcreteConnect(User admin, User u1, User u2) {
 		privlegedUser = admin;
 		user1 = u1;
 		user2 = u2;
 	}
 	
+	/**
+	 * Alerts the user that he has a new potential connection to check on topic t
+	 */
 	public void alertUser(Topic t) {
 		if (user1.getPreferences().contains(t) && user2.getPreferences().contains(t)) {
 			user1.addPendingConnection(this);
@@ -21,6 +30,9 @@ public class ConcreteConnect implements Connect {
 		}
 	}
 
+	/**
+	 * Requests permission from the privleged user in charge
+	 */
 	public boolean requestPermission() {
 		if (requested1 && requested2) {
 			return privlegedUser.grantApproval(this);

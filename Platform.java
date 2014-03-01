@@ -14,7 +14,6 @@ import java.sql.ResultSet;
 public class Platform {
 	private static Platform singleton = null;
 	public static Connect SQLconn = null;
-	Collection<User> admins;
 	Collection<User> users;
 	Collection<Topic> topics;
 	Collection<Project> projects;
@@ -36,9 +35,9 @@ public class Platform {
 		return users;
 	}
 	
-	public void createConnection(Message m, Topic t) {
+	public void createConnection(User admin, Message m, Topic t) {
 		Connect c =
-				new ConcreteConnect(admins.iterator().next(), m.getSender(), m.getRecipient());
+				new ConcreteConnect(admin, m.getSender(), m.getRecipient());
 		c.alertUser(t);
 	}
 	
