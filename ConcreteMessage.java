@@ -8,6 +8,8 @@ public class ConcreteMessage implements Message{
 	
 	public ConcreteMessage(User s, User r, String t) {
 		text = t;
+		sender = s;
+		recipient = r;
 	}
 	
 	/**
@@ -28,11 +30,11 @@ public class ConcreteMessage implements Message{
 	}
 
 	public User getSender() {
-		return null;
+		return sender;
 	}
 
 	public User getRecipient() {
-		return null;
+		return recipient;
 	}
 
 }
