@@ -31,12 +31,7 @@ public class ConcreteUser implements User {
 	}	
 
 	public boolean grantApproval(Connect pendingConnection)	{
-		if (privleged = false) {
-			return false;
-		}
-		else {
-			return true;
-		}
+		return privleged;
 	}
 
 	public void sendMessage(User recipient, String text) {
@@ -70,5 +65,10 @@ public class ConcreteUser implements User {
 
 	public boolean isPrivleged() {
 		return privleged;
+	}
+	
+	public void setPrivilege(boolean bool)
+	{
+		this.privleged = bool;
 	}
 }
