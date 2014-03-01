@@ -1,6 +1,5 @@
 import java.util.Collection;
 import java.util.HashSet;
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,6 +14,7 @@ import java.sql.ResultSet;
 public class Platform {
 	private static Platform singleton = null;
 	public static Connection SQLconn = null;
+	Collection<User> admins;
 	Collection<User> users;
 	Collection<Topic> topics;
 	Collection<Project> projects;
@@ -36,8 +36,10 @@ public class Platform {
 		return users;
 	}
 	
-	public void createConnection(Topic t) {
-		
+	public void createConnection(Message m, Topic t) {
+		Connection c =
+				new ConcreteConnection(admins.iterator().next(), m.getSender(), m.getRecipient());
+		c.alertUser(t);
 	}
 	
 	public Collection<Topic> getTopics() {
@@ -87,7 +89,7 @@ public class Platform {
         finally{
             // cleanup
             if (rs != null){
-                try { rs.close(); } catch(SQLException sqlEx){}
+                try { rs.close(); } catch (SQLException sqlEx) {}
                 rs = null;
             }
             if (stmt != null){
