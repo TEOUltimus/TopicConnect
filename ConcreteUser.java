@@ -6,7 +6,7 @@ public class ConcreteUser implements User {
 	String id;
 	String location;
 	boolean localOnly;
-	boolean privleged;
+	boolean privileged;
 	HashSet<Connect> pendingConnections;
 	HashSet<Connect> confirmedConnections;
 	HashSet<Topic> preferredTopics;
@@ -17,7 +17,7 @@ public class ConcreteUser implements User {
 		id = "0";
 		String location = "";
 		localOnly = true;
-		privleged = false;
+		privileged = false;
 		pendingConnections = new HashSet<Connect>();
 		confirmedConnections = new HashSet<Connect>();
 		preferredTopics = new HashSet<Topic>();
@@ -31,7 +31,7 @@ public class ConcreteUser implements User {
 	}	
 
 	public boolean grantApproval(Connect pendingConnection)	{
-		return privleged;
+		return privileged;
 	}
 
 	public void sendMessage(User recipient, String text) {
@@ -65,10 +65,10 @@ public class ConcreteUser implements User {
 	}
 
 	public boolean isPrivleged() {
-		return privleged;
+		return privileged;
 	}
 	
 	public void setPrivilege(boolean bool) {
-		this.privleged = bool;
+		this.privileged = bool;
 	}
 }
