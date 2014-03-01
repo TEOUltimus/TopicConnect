@@ -9,7 +9,7 @@ public class ConcreteConnection implements Connection{
 	private boolean requested1 = false, requested2 = false;
 	
 	public ConcreteConnection(User admin, User u1, User u2) {
-		privlegedUser = admin;
+		privelegedUser = admin;
 		user1 = u1;
 		user2 = u2;
 	}
@@ -23,7 +23,7 @@ public class ConcreteConnection implements Connection{
 
 	public boolean requestPermission() {
 		if (requested1 && requested2) {
-			return privlegedUser.grantApproval(this);
+			return privelegedUser.grantApproval(this);
 		}
 		return false;
 	}

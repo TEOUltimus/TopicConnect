@@ -68,5 +68,22 @@ public class Platform {
 		}
 	}
 	
-	public void 
+	public void runSQL(String SQL){
+	    Statement stmt = null;
+	    ResultSet rs = null;
+	    
+	    try{
+	        stmt = SQLconn.createStatement();
+	        if (stmt.execute(SQL)){
+	            rs = stmt.getResultSet();
+	        }
+	    }
+	    catch (Exception ex){
+	        // well fuck
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+	        
+	    }
+	}
 }
