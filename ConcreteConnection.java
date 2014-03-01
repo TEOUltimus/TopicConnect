@@ -6,7 +6,7 @@ public class ConcreteConnection implements Connection{
 	private User privelegedUser;
 	private User user1, user2;
 	private boolean approved = false;
-	private int numRequests = 0;
+	private boolean requested1 = false, requested2 = false;
 	
 	public ConcreteConnection(User admin, User u1, User u2) {
 		privelegedUser = admin;
@@ -19,11 +19,17 @@ public class ConcreteConnection implements Connection{
 	}
 
 	public boolean requestPermission() {
+		if (requested1 && requested2) {
+			return privelegedUser.grantApproval(this);
+		}
 		return false;
 	}
 
-	public void connectUsers(Connection conn) {
-		
+	public void connectUsers() {
+		user1.removePendingConnection(this);
+		user1.addConfirmedConnection(this);
+		user2.removePendingConnection(this);
+		user2.addConfirmedConnection(this);
 	}
 
 	public User getOtherUser(User u) {
@@ -36,5 +42,4 @@ public class ConcreteConnection implements Connection{
 			return null;
 		}
 	}
-
 }
