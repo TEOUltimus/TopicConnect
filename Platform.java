@@ -1,10 +1,23 @@
+import java.util.Collection;
+
 /**
  * @author TEO Ultimus
  */
 public class Platform {
-	private static Platform singleton;
+	private static Platform singleton = null;
 	
 	private Platform(){
+	}
+	
+	public static Platform getPlatform() {
+		if (null == singleton) {
+			singleton = new Platform();
+		}
+		return singleton;
+	}
+	
+	public Collection<User> getUsers() {
+		return null;
 	}
 	
 	/**
@@ -14,5 +27,4 @@ public class Platform {
 	public static void main(String[] args) {
 		System.out.println("Hello Users!");
 	}
-
 }
