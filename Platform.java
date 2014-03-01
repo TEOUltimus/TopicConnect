@@ -92,14 +92,11 @@ public class Platform {
 		
 		David.sendMessage(Brandon, "Been working out the kinks with worldDomination in my spare time, had some ideas...");
 		
-		
-		
-		
 	}
 	
 	public void establishDBConnection(){
 	    // Bad practice, but we're bad people
-	    Class cls = null; // persistance 
+/*	    Class cls = null; // persistance 
 	    try{
             File file = new File("mysql-connector-java-5.1.29-bin.jar");
             URL url = file.toURL();
@@ -111,21 +108,25 @@ public class Platform {
             System.out.println("File not found -- " + ex);
         }
 	    
-	
+*/	
         String sqlconnstring = "jdbc:mysql://mylanhack.coktmzoprhqd.us-west-2.rds.amazonaws.com/mylanhack?" +
                                    "user=mylanroot&password=mylantoor";
 		
 		// Establish Database Connection
 		try{
-		    Class.forName("com.mysql.jdbc.Driver").newInstance();
+		    Class.forName("com.mysql.jdbc.Driver");
 		    SQLconn = DriverManager.getConnection(sqlconnstring);
 		}
 		catch(Exception ex){
 		    System.out.println("Database connection went bad -- " + ex);
+		    System.exit(0); //no DB, don't bother running
 		}
+		System.out.println("Established DB connection!");
+		
 	}
 	
 	public ResultSet runSQL(String SQL){
+	    System.out.println("Query Request:\n"+SQL+"\n");
 	    Statement stmt = null;
 	    ResultSet rs = null;
 	    
