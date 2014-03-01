@@ -80,6 +80,12 @@ public class Platform {
 		testPlatform.topics.add(Generics);
 		testPlatform.topics.add(Hackathons);
 		
+		David.addPreferences(testPlatform.topics);
+		Dan.addPreferences(testPlatform.topics);
+		Brandon.addPreferences(testPlatform.topics);
+		Eric.addPreferences(testPlatform.topics);
+		Sudatta.addPreferences(testPlatform.topics);
+		
 		ConcreteProject marchHackathon = new ConcreteProject();
 		ConcreteProject worldDomination = new ConcreteProject();
 		marchHackathon.addTopic(Hackathons);
