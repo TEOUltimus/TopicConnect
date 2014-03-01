@@ -1,3 +1,5 @@
+import java.util.Collection;
+
 /**
  * @author TEO Ultimus
  * User of the platform
@@ -8,4 +10,5 @@ public interface User {
 	void addPendingConnection(Connection conn);
 	void removePendingConnection(Connection conn);
 	void addConfirmedConnection(Connection conn);
+	Collection<Topic> getPreferences();
 }
