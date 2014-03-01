@@ -76,4 +76,9 @@ public class ConcreteUser implements User {
 	{
 		//Do Nothing
 	}
+	
+	public void setLocalOnly(boolean switch)
+	{
+		this.localOnly = switch;
+	}
 }

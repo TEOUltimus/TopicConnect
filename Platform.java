@@ -16,9 +16,13 @@ public class Platform {
 	private static Platform singleton = null;
 	public static Connection SQLconn = null;
 	Collection<User> users;
+	Collection<Topic> topics;
+	Collection<Project> projects;
 	
 	private Platform(){
-//		users = new HashSet<>();
+		users = new HashSet<>();
+		topics = new HashSet<>();
+		projects = new HashSet<>();
 	}
 	
 	public static Platform getPlatform() {
@@ -34,6 +38,10 @@ public class Platform {
 	
 	public void createConnection(Topic t) {
 		
+	}
+	
+	public Collection<Topic> getTopics() {
+		return topics;
 	}
 	
 	/**

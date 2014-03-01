@@ -29,5 +29,4 @@ public class ConcreteProject implements Project{
 	public boolean removeTopic(Topic t) {
 		return topics.remove(t);
 	}
-
 }

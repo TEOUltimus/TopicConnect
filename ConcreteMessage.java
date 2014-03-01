@@ -10,10 +10,14 @@ public class ConcreteMessage implements Message{
 	}
 	
 	public void process() {
-		// MAGIC
+		for (Topic t : Platform.getPlatform().getTopics()) {
+			if (t.textMatch(text)) {
+				alertTopic(t, this);
+			}
+		}
 	}
 
-	public void alertTopic(Topic t, Message m) {
+	private void alertTopic(Topic t, Message m) {
 		t.alertPlatform(m);
 	}
 
