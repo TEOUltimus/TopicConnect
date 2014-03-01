@@ -4,4 +4,5 @@
  */
 public interface Topic {
 	void alertPlatform(Message m);
+	boolean textMatch(String text);
 }
