@@ -19,9 +19,9 @@ public class ConcreteUser implements User {
 		String location = "";
 		localOnly = true;
 		privelge = false;
-		pendingConnections = new ArrayList<String>();
-		confirmedConnections = new ArrayList<String>();
-		preferredTopics = new ArrayList<Topic>();
+		pendingConnections = new HashSet<Connection>();
+		confirmedConnections = new HashSet<Connection>();
+		preferredTopics = new HashSet<Topic>();
 		
     }
 	
@@ -39,8 +39,8 @@ public class ConcreteUser implements User {
 		if (this.privelege = false) {
 			return false;
 		}
-		else {
-			//Code creation of connection in each user in here
+		else 
+		{
 			return true;
 		}
 	}
