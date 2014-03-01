@@ -40,6 +40,9 @@ public class ConcreteConnect implements Connect {
 		return false;
 	}
 
+	/**
+	 * Changes connection from potential to definite
+	 */
 	public void connectUsers() {
 		user1.removePendingConnection(this);
 		user1.addConfirmedConnection(this);
@@ -47,6 +50,9 @@ public class ConcreteConnect implements Connect {
 		user2.addConfirmedConnection(this);
 	}
 
+	/**
+	 * If a connection has been established, will give identity of other user
+	 */
 	public User getOtherUser(User u) {
 		if (!approved) return null;
 		if (u == user1) {
