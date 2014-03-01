@@ -36,4 +36,22 @@ public class ConcreteUser implements User {
 
 	public void sendMessage(User recipient, String text) {
 	}
+
+	@Override
+	public void addPendingConnection() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removePendingConnection() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addConfirmedConnection() {
+		// TODO Auto-generated method stub
+		
+	}
 }

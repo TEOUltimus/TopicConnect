@@ -5,4 +5,7 @@
 public interface User {
 	boolean grantApproval(Connection conn);
 	void sendMessage(User recipient, String text);
+	void addPendingConnection();
+	void removePendingConnection();
+	void addConfirmedConnection();
 }

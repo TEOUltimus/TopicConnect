@@ -6,5 +6,5 @@ public interface Connection {
 	void alertUser(Topic t);
 	boolean requestPermission();
 	void connectUsers(Connection conn);
-	User getOtherUser();
+	User getOtherUser(User u);
 }
