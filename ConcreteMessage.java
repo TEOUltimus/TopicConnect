@@ -17,9 +17,7 @@ public class ConcreteMessage implements Message{
 	 */
 	public void process() {
 		for (Topic t : Platform.getPlatform().getTopics()) {
-			System.out.println(t.toString());
 			if (t.textMatch(text)) {
-				System.out.println("\tMatch!");
 				alertTopic(t, this);
 			}
 		}

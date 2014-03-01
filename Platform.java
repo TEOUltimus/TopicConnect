@@ -1,5 +1,6 @@
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Scanner;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Connection;
@@ -37,7 +38,7 @@ public class Platform {
 	}
 	
 	public void createConnection(User admin, Message m, Topic t) {
-		System.out.println("Creating Connenction " + t);
+		System.out.println("Creating connenction about " + t + " between ");
 		Connect c =
 				new ConcreteConnect(admin, m.getSender(), m.getRecipient());
 		c.alertUser(t);
@@ -93,7 +94,28 @@ public class Platform {
 		testPlatform.projects.add(marchHackathon);
 		testPlatform.projects.add(worldDomination);
 		
-		David.sendMessage(Brandon, "Been working out the kinks with Generics from worldDomination in my spare time, had some ideas...");
+		Scanner reader = new Scanner(System.in);
+		
+		//David.sendMessage(Brandon, "Been working out the kinks with Generics from worldDomination in my spare time, had some ideas...");
+		while (true) {
+			System.out.println("Want to send message, get connected, or exit?");
+			System.out.print("> ");
+			String cmd = reader.nextLine();
+			if (cmd.toLowerCase().contains("exit")) {
+				System.out.println("Bye!");
+				break;
+			} else if (cmd.toLowerCase().contains("send")) {
+				System.out.println("to:");
+				System.out.print("> ");
+				String target = reader.nextLine();
+				System.out.println("message:");
+				System.out.print("> ");
+				String message = reader.nextLine();
+				David.sendMessage(Brandon, message);
+			} else if (cmd.toLowerCase().contains("con")) {
+				
+			}
+		}
 	}
 	
 	public void establishDBConnection(){
@@ -123,7 +145,7 @@ public class Platform {
 		    System.out.println("Database connection went bad -- " + ex);
 		    System.exit(0); //no DB, don't bother running
 		}
-		System.out.println("Established DB connection!");
+		System.out.println("Established DB connection");
 		
 	}
 	

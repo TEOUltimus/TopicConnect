@@ -31,7 +31,7 @@ public class ConcreteConnect implements Connect {
 		if (requestPermission()) {
 			connectUsers();
 		} else {
-			System.out.println("User does not have permission to approve this.");
+			System.out.println("Either user does not have permission to approve this or not all users are interested.");
 		}
 	}
 
