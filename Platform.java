@@ -58,8 +58,41 @@ public class Platform {
 		getPlatform().establishDBConnection();
 		getPlatform().testSQL();
 		
-		
 		Platform testPlatform = new Platform();
+		
+		//Make test lists of users, topics, and projects
+		ConcreteUser David = new ConcreteUser("David");
+		ConcreteUser Eric = new ConcreteUser("Eric");
+		ConcreteUser Brandon = new ConcreteUser("Brandon");
+		ConcreteUser Sudatta = new ConcreteUser("Sudatta");
+		ConcreteUser Dan = new ConcreteUser("Dan");
+		Dan.setPrivilege(true);
+		testPlatform.users.add(David);
+		testPlatform.users.add(Eric);
+		testPlatform.users.add(Brandon);
+		testPlatform.users.add(Sudatta);
+		testPlatform.users.add(Dan);
+		
+		ConcreteTopic Biologics = new ConcreteTopic("Biologics", Dan);
+		ConcreteTopic Generics = new ConcreteTopic("Generics", Dan);
+		ConcreteTopic Hackathons = new ConcreteTopic("Hackathons", Dan);
+		testPlatform.topics.add(Biologics);
+		testPlatform.topics.add(Generics);
+		testPlatform.topics.add(Hackathons);
+		
+		ConcreteProject marchHackathon = new ConcreteProject();
+		ConcreteProject worldDomination = new ConcreteProject();
+		marchHackathon.addTopic(Hackathons);
+		worldDomination.addTopic(Generics);
+		worldDomination.addTopic(Biologics);
+		marchHackathon.addUser(David);
+		marchHackathon.addUser(Eric);
+		worldDomination.addUser(Sudatta);
+		testPlatform.projects.add(marchHackathon);
+		testPlatform.projects.add(worldDomination);
+		
+		David.sendMessage(Brandon, "Been working out the kinks with worldDomination in my spare time, had some ideas...");
+		
 	}
 	
 	public void establishDBConnection(){
