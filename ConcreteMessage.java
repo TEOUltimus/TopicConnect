@@ -14,7 +14,7 @@ public class ConcreteMessage implements Message{
 	}
 
 	public void alertTopic(Topic t, Message m) {
-		
+		t.alertPlatform(m);
 	}
 
 }
