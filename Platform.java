@@ -83,7 +83,17 @@ public class Platform {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
-	        
 	    }
+        finally{
+            // cleanup
+            if (rs != null){
+                try { rs.close(); } catch(SQLException sqlEx){}
+                rs = null;
+            }
+            if (stmt != null){
+                try{ stmt.close(); } catch{SQLException sqlEx){}
+                stmt = null;
+            }
+        }
 	}
 }
