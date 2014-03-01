@@ -15,7 +15,10 @@ public class ConcreteConnection implements Connection{
 	}
 	
 	public void alertUser(Topic t) {
-		
+		if (user1.getPreferences().contains(t) && user2.getPreferences().contains(t)) {
+			user1.addPendingConnection(this);
+			user2.addPendingConnection(this);
+		}
 	}
 
 	public boolean requestPermission() {
