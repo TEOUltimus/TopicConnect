@@ -15,22 +15,29 @@ public class ConcreteUser implements User {
     public ConcreteUser(String name)
     {
         this.name = name;
+		id = "0";
+		String location = "";
+		localOnly = true;
+		privelge = false;
+		pendingConnections = new ArrayList<String>();
+		confirmedConnections = new ArrayList<String>();
+		preferredTopics = new ArrayList<Topic>();
 		
     }
 	
-<<<<<<< HEAD
+	public String getName()
+	{
+		return this.name;
+	}
 	public String getLocation()
 	{
 		 return this.location;
-	}
-	
+	}	
 	public String 
 	
 	
 	public boolean grantApproval(concreteConnection pendingConnection)
-=======
 	public boolean grantApproval(Connection pendingConnection)
->>>>>>> 33ed168321c0eb160aa8dec86ba35891aa5014c4
 	{
 		if (this.privelege = false) {
 			return false;
@@ -41,7 +48,6 @@ public class ConcreteUser implements User {
 		}
 	}
 	
-<<<<<<< HEAD
 	public void sendMessage(concreteMessage newMessage, concreteUser otherUser)
 	{
 		return null;
@@ -59,10 +65,6 @@ public class ConcreteUser implements User {
 		return null;
 	}
 	
-	
-	
-	
-=======
 	public void addConnection(Connection newConnection)	{
 	}
 	
@@ -74,20 +76,16 @@ public class ConcreteUser implements User {
 
 	@Override
 	public void addPendingConnection() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void removePendingConnection() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void addConfirmedConnection() {
-		// TODO Auto-generated method stub
 		
 	}
->>>>>>> 33ed168321c0eb160aa8dec86ba35891aa5014c4
 }
