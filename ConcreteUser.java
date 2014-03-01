@@ -47,7 +47,7 @@ public class ConcreteUser implements User {
 
 	public void sendMessage(User recipient, String text) 
 	{
-		Message sentMessage = new ConcreteMessage(text);
+		Message sentMessage = new ConcreteMessage(this, recipient, text);
 		recipient.receiveMessage(sentMessage);
 	}
 

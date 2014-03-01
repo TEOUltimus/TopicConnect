@@ -2,7 +2,7 @@
  * @author TEO Ultimus
  * Instance of the Connection interface
  */
-public class ConcreteConnection implements Connection{
+public class ConcreteConnection implements Connection {
 	private User privlegedUser;
 	private User user1, user2;
 	private boolean approved = false;

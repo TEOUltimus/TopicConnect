@@ -5,4 +5,6 @@
 public interface Message {
 	void process();
 	void alertTopic(Topic t, Message m);
+	User getSender();
+	User getRecipient();
 }
