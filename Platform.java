@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.io.*;
+import java.net.*;
 
 
 // Not importing com.mysql.jdbc, documentation says this leads to sadness
@@ -37,9 +39,9 @@ public class Platform {
 		return users;
 	}
 	
-	public void createConnection(Message m, Topic t) {
+	public void createConnection(User admin, Message m, Topic t) {
 		Connect c =
-				new ConcreteConnect(admins.iterator().next(), m.getSender(), m.getRecipient());
+				new ConcreteConnect(admin, m.getSender(), m.getRecipient());
 		c.alertUser(t);
 	}
 	
@@ -53,7 +55,7 @@ public class Platform {
 	 */
 	public static void main(String[] args) {
 		System.out.println("Hello Users!");
-		establishDBConnection();
+		getPlatform().establishDBConnection();
 		
 		Platform testPlatform = new Platform();
 		
@@ -95,7 +97,21 @@ public class Platform {
 		
 	}
 	
-	public static void establishDBConnection(){
+	public void establishDBConnection(){
+	    // Bad practice, but we're bad people
+	    Class cls = null; // persistance 
+	    try{
+            File file = new File("mysql-connector-java-5.1.29-bin.jar");
+            URL url = file.toURL();
+            URL[] urls = new URL[]{url};
+            ClassLoader cl = new URLClassLoader(urls);
+            cls = cl.loadClass("com.mysql.jdbc.Driver");
+        }
+        catch(Exception ex){
+            System.out.println("File not found -- " + ex);
+        }
+	    
+	
         String sqlconnstring = "jdbc:mysql://mylanhack.coktmzoprhqd.us-west-2.rds.amazonaws.com/mylanhack?" +
                                    "user=mylanroot&password=mylantoor";
 		

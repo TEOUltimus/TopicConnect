@@ -6,10 +6,11 @@ import java.util.Collection;
  */
 public interface User {
 	boolean grantApproval(Connect conn);
+	boolean isPrivleged();
 	void sendMessage(User recipient, String text);
 	void receiveMessage(Message m);
 	void addPendingConnection(Connect conn);
-	void removePendingConnection(Connect conn);
+	boolean removePendingConnection(Connect conn);
 	void addConfirmedConnection(Connect conn);
 	Collection<Topic> getPreferences();
 }
