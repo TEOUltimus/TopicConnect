@@ -33,7 +33,6 @@ public class ConcreteUser implements User {
 	{
 		 return this.location;
 	}	
-	public String 
 	
 	public boolean grantApproval(Connection pendingConnection)
 	{
@@ -49,7 +48,8 @@ public class ConcreteUser implements User {
 
 	public void sendMessage(User recipient, String text) 
 	{
-		Message sentMessage = new Message(text);	
+		Message sentMessage = new Message(text);
+		recipient.receiveMessage(sentMessage);
 		return null;
 	}
 
