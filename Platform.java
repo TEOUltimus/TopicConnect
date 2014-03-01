@@ -1,12 +1,15 @@
 import java.util.Collection;
+import java.util.HashSet;
 
 /**
  * @author TEO Ultimus
  */
 public class Platform {
 	private static Platform singleton = null;
+	Collection<User> users;
 	
 	private Platform(){
+		users = new HashSet<>();
 	}
 	
 	public static Platform getPlatform() {
@@ -17,7 +20,7 @@ public class Platform {
 	}
 	
 	public Collection<User> getUsers() {
-		return null;
+		return users;
 	}
 	
 	/**
