@@ -56,7 +56,7 @@ public class Platform {
 	public static void main(String[] args) {
 		System.out.println("Hello Users!");
 		getPlatform().establishDBConnection();
-		getPlatform().testSQL();
+//		getPlatform().testSQL();
 		
 		Platform testPlatform = new Platform();
 		
