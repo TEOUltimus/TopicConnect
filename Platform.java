@@ -50,7 +50,12 @@ public class Platform {
 	 */
 	public static void main(String[] args) {
 		System.out.println("Hello Users!");
-		String sqlconnstring = "jdbc:mysql://mylanhack.coktmzoprhqd.us-west-2.rds.amazonaws.com/mylanhack?" +
+		establishDBConnection();
+		
+	}
+	
+	public static void establishDBConnection(){
+        String sqlconnstring = "jdbc:mysql://mylanhack.coktmzoprhqd.us-west-2.rds.amazonaws.com/mylanhack?" +
                                    "user=mylanroot&password=mylantoor";
 		
 		// Establish Database Connection
@@ -61,6 +66,24 @@ public class Platform {
 		catch(Exception ex){
 		    System.out.println("Database connection went bad -- " + ex);
 		}
-		
+	}
+	
+	public void runSQL(String SQL){
+	    Statement stmt = null;
+	    ResultSet rs = null;
+	    
+	    try{
+	        stmt = SQLconn.createStatement();
+	        if (stmt.execute(SQL)){
+	            rs = stmt.getResultSet();
+	        }
+	    }
+	    catch (Exception ex){
+	        // well fuck
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+	        
+	    }
 	}
 }

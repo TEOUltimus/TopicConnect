@@ -4,7 +4,7 @@
  */
 public interface Project {
 	void addUser(User usr);
-	boolean removeUser(User usr);
+	void removeUser(User usr);
 	void addTopic(Topic t);
-	boolean removeTopic(Topic t);
+	void removeTopic(Topic t);
 }
