@@ -17,17 +17,6 @@ class ConcreteTopic implements Topic
 	
 	public boolean textMatch(String text)
 	{
-		if(this.topicName.equals(text))
-		{
-			return true;
-		}
-		if(text.contains(this.topicName))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}	
+		return text.contains(this.topicName);
 	}
 }
