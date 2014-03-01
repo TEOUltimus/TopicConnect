@@ -56,6 +56,7 @@ public class Platform {
 	public static void main(String[] args) {
 		System.out.println("Hello Users!");
 		getPlatform().establishDBConnection();
+		getPlatform().testSQL();
 		
 		
 		Platform testPlatform = new Platform();
@@ -102,6 +103,7 @@ public class Platform {
 	        if (stmt.execute(SQL)){
 	            rs = stmt.getResultSet();
 	        }
+	        return rs;
 	    }
 	    catch (SQLException ex){
 	        // well fuck
@@ -122,5 +124,17 @@ public class Platform {
         }
         
         return rs;
+	}
+	
+	public void testSQL(){
+	    System.out.println("TESTING SQL -- DO NOT INCLUDE");
+	    ResultSet rs = getPlatform().runSQL("SELECT * FROM Users");
+	    
+	    System.out.println(rs.getClass());
+	    try{
+    	    System.out.println(rs.getString("first_name"));
+    	} catch(SQLException ex){
+    	    System.out.println(ex);
+    	}
 	}
 }
