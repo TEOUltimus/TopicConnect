@@ -4,15 +4,25 @@ class ConcreteTopic implements Topic
 {
 	String topicName;
 	
-	public concreteTopic(String name)
+	public ConcreteTopic(String name)
 	{
-		this.topicName = name;
-	}
-		
-	public ConcreteTopic() {
+		this.topicName = name;	
 	}
 
-	public void alertPlatform(Message m) {
+	public void alertPlatform(Message m) 
+	{
 		
+	}
+	
+	public boolean textMatch(String text)
+	{
+		if(this.topicName.equals(text))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}	
 	}
 }
