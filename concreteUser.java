@@ -6,7 +6,7 @@ public class ConcreteUser implements User {
 	String id;
 	String location;
 	boolean localOnly;
-	boolean privelege;
+	boolean privlege;
 	HashSet<Connection> pendingConnections;
 	HashSet<Connection> confirmedConnections;
 	HashSet<Topic> preferredTopics;
@@ -18,7 +18,7 @@ public class ConcreteUser implements User {
 		id = "0";
 		String location = "";
 		localOnly = true;
-		privelge = false;
+		privlege = false;
 		pendingConnections = new HashSet<Connection>();
 		confirmedConnections = new HashSet<Connection>();
 		preferredTopics = new HashSet<Topic>();
@@ -36,7 +36,7 @@ public class ConcreteUser implements User {
 	
 	public boolean grantApproval(Connection pendingConnection)
 	{
-		if (this.privelege = false) {
+		if (privlege = false) {
 			return false;
 		}
 		else 
@@ -48,7 +48,7 @@ public class ConcreteUser implements User {
 
 	public void sendMessage(User recipient, String text) 
 	{
-		Message sentMessage = new Message(text);
+		Message sentMessage = new ConcreteMessage(text);
 		recipient.receiveMessage(sentMessage);
 	}
 
@@ -67,7 +67,7 @@ public class ConcreteUser implements User {
 		confirmedConnections.add(conn);
 	}
 	
-	Collection<Topic> getPreferences()
+	public Collection<Topic> getPreferences()
 	{
 		return this.preferredTopics;
 	}
@@ -77,8 +77,8 @@ public class ConcreteUser implements User {
 		//Do Nothing
 	}
 	
-	public void setLocalOnly(boolean switch)
+	public void setLocalOnly(boolean bool)
 	{
-		this.localOnly = switch;
+		this.localOnly = bool;
 	}
 }
