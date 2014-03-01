@@ -81,7 +81,7 @@ public class Platform {
 	            rs = stmt.getResultSet();
 	        }
 	    }
-	    catch (Exception ex){
+	    catch (SQLException ex){
 	        // well fuck
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
