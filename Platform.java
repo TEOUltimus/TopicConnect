@@ -42,7 +42,12 @@ public class Platform {
 	 */
 	public static void main(String[] args) {
 		System.out.println("Hello Users!");
-		String sqlconnstring = "jdbc:mysql://mylanhack.coktmzoprhqd.us-west-2.rds.amazonaws.com/mylanhack?" +
+		establishDBConnection();
+		
+	}
+	
+	public static void establishDBConnection(){
+        String sqlconnstring = "jdbc:mysql://mylanhack.coktmzoprhqd.us-west-2.rds.amazonaws.com/mylanhack?" +
                                    "user=mylanroot&password=mylantoor";
 		
 		// Establish Database Connection
@@ -53,6 +58,5 @@ public class Platform {
 		catch(Exception ex){
 		    System.out.println("Database connection went bad -- " + ex);
 		}
-		
 	}
 }
