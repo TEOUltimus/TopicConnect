@@ -3,24 +3,27 @@
  * Instance of the Connection interface
  */
 public class ConcreteConnection implements Connection{
-	private User privelegedUser;
+	private User privlegedUser;
 	private User user1, user2;
 	private boolean approved = false;
 	private boolean requested1 = false, requested2 = false;
 	
 	public ConcreteConnection(User admin, User u1, User u2) {
-		privelegedUser = admin;
+		privlegedUser = admin;
 		user1 = u1;
 		user2 = u2;
 	}
 	
 	public void alertUser(Topic t) {
-		
+		if (user1.getPreferences().contains(t) && user2.getPreferences().contains(t)) {
+			user1.addPendingConnection(this);
+			user2.addPendingConnection(this);
+		}
 	}
 
 	public boolean requestPermission() {
 		if (requested1 && requested2) {
-			return privelegedUser.grantApproval(this);
+			return privlegedUser.grantApproval(this);
 		}
 		return false;
 	}

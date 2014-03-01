@@ -10,7 +10,7 @@ public class ConcreteMessage implements Message{
 	}
 	
 	public void process() {
-		
+		// MAGIC
 	}
 
 	public void alertTopic(Topic t, Message m) {

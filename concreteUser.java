@@ -35,7 +35,6 @@ public class ConcreteUser implements User {
 	}	
 	public String 
 	
-	
 	public boolean grantApproval(Connection pendingConnection)
 	{
 		if (this.privelege = false) {
@@ -46,7 +45,7 @@ public class ConcreteUser implements User {
 			return true;
 		}
 	}
-	
+
 
 	public void sendMessage(User recipient, String text) 
 	{
@@ -75,5 +74,10 @@ public class ConcreteUser implements User {
 	Collection<Topic> getPreferences()
 	{
 		return this.preferredTopics;
+	}
+	
+	public void receiveMessage(Message m)
+	{
+		return null;
 	}
 }
