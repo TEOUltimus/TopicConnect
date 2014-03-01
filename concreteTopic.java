@@ -1,10 +1,13 @@
 import java.util.*;
 
-public concreteTopic implements Topic
+class ConcreteTopic implements Topic
 {
 	String topicName;
 	
-	public concreteTopic()
-	{
+	public ConcreteTopic() {
+	}
+
+	public void alertPlatform(Message m) {
+		
 	}
 }
